@@ -5,22 +5,27 @@
 */
 
 int ledPin[] = { 6,7,8,9 };
+int buttonPin = 4;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
+	Serial.begin(115200);
 	for (int i = 0; i<4; i++)
 	{
 		pinMode(ledPin[i], OUTPUT);
 	}
+	pinMode(buttonPin, OUTPUT);
 }
 
 // the loop function runs over and over again until power down or reset
+byte counter = 0;
 void loop()
 {
-	for (byte counter = 0; counter <= 15; counter++)
-	{
-		displayBinary(counter);
-		delay(500);
+	int val = digitalRead(buttonPin);
+	if (val == HIGH) {
+		displayBinary(++counter);
+		Serial.println(counter);
+		delay(250);
 	}
 }
 

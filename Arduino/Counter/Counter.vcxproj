@@ -11,21 +11,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C5F80730-F44F-4478-BDAE-6634EFC2CA88}</ProjectGuid>
+    <ProjectGuid>{E9150DCE-EF26-4FE5-A9D5-E64DC51403B3}</ProjectGuid>
     <RootNamespace>Counter</RootNamespace>
-    <ProjectName>Sketch</ProjectName>
+    <ProjectName>Counter</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset></PlatformToolset>
+    <PlatformToolset>
+    </PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset></PlatformToolset>
+    <PlatformToolset>
+    </PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -40,7 +42,6 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -58,10 +59,14 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Counter;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\libraries;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Users\cmcarthur\Documents\Arduino\libraries;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\tools\avr\avr\include\;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\tools\avr\avr\include\avr\;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)__vm\.Counter.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;F_CPU=16000000L;ARDUINO=10804;ARDUINO_AVR_NANO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -69,7 +74,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-    <ItemGroup>
+  <ItemGroup>
     <ProjectCapability Include="VisualMicro" />
   </ItemGroup>
   <PropertyGroup>
@@ -80,7 +85,10 @@
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
-   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ClInclude Include="__vm\.Counter.vsarduino.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

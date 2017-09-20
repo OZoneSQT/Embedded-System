@@ -17,5 +17,9 @@
   <ItemGroup>
     <None Include="Counter.ino" />
   </ItemGroup>
- 
+  <ItemGroup>
+    <ClInclude Include="__vm\.Counter.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
