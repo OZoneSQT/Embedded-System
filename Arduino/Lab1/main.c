@@ -19,7 +19,7 @@ int main(void)
 	DDRB &= (INPUT << PB4);
 	PORTB &= (LOW << PB4);
 	
-	byte iCounter = 0b0000;
+	byte iCounter = 0;
 
 	while (1)
 	{
