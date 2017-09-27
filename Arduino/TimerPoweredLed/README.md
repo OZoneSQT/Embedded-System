@@ -22,29 +22,29 @@ Christopher McArthur | `40004257`
 ## Introduction
 - Problem Statement: Using arduino and coding in 'bare metal' (c programming) create a 4-bt counter that displays the binary value of the counter on a set of LEDs. the solution should take in a count debouncing effect.
 - Abbreviations and Acronyms
- - LED == Light Emiting Diode
- - DDRx, PBn, etc... Registers names
- - OCR == output compare register
- - IR == infra red
- - ADC == analog to digital conversion
- - PWM == pulse with modulation
+  - LED == Light Emiting Diode
+  - DDRx, PBn, etc... Registers names
+  - OCR == output compare register
+  - IR == infra red
+  - ADC == analog to digital conversion
+  - PWM == pulse with modulation
  
 ## Resources 
 - Hardware Resources
- - Arduino Nano
- - LEDs
- - Push Button
- - Resistors
- - Jumper Wires
- - IR Sensor
+  - Arduino Nano
+  - LEDs
+  - Push Button
+  - Resistors
+  - Jumper Wires
+  - IR Sensor
 - Hardware Setup
- - I have not installed Fritzing
+  - I have not installed Fritzing
 
 ## Software Resources
 - Software setup
- - IDE is Visual Studio 2017 Enterprise
- - Compilers are the avr-gcc for windows
- - Visual studio has an extension called 'Visual Micro' which handles everything from compiling to upload (it just needs to be configured like the Arduino IDE)
+  - IDE is Visual Studio 2017 Enterprise
+  - Compilers are the avr-gcc for windows
+  - Visual studio has an extension called 'Visual Micro' which handles everything from compiling to upload (it just needs to be configured like the Arduino IDE)
  
 ## Program Snipets
 - timer 2 setup code
