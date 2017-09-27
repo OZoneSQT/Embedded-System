@@ -7,11 +7,23 @@
 // the setup function runs once when you press reset or power the board
 void setup() {
    Serial.begin(115200);
+
+   //while (!Serial) { } // wait for connection
+
+   int serial_max_write = Serial.availableForWrite();
+
+   Serial.println("input a message, ill print the bytes");
 }
 
 // the loop function runs over and over again until power down or reset
 void loop()
 {
-   delay(500);
-   Serial.println("Hello World");
+   while (Serial.available() > 0) {
+      // read the incoming byte:
+      int incomingByte = Serial.read();
+
+      // say what you got:
+      Serial.print("I received: ");
+      Serial.println(incomingByte, DEC);
+   }
 }
