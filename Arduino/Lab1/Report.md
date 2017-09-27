@@ -28,7 +28,7 @@
  
 ## Program Snipets
 - main loop
-```
+```c
 while (1)
 {
   if (isButtonPressed())
@@ -39,7 +39,7 @@ while (1)
 }
 ```
 - button detection
-```
+```c
 if (PINB&(HIGH << PB4) && !g_bPressed)
 {
   g_bPressed = 1;
