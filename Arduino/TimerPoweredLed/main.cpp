@@ -1,30 +1,22 @@
-// 
-// 
-// 
+//
+//
+//
 
-//#include "main.h"
-//#include <util/delay.h>
-//#include <HardwareSerial.h>
-//
-//int main(void)
-//{
-//   Serial.begin(9600);
-//
-//   /* set pin D5 for output internal LED*/
-//   DDRB |= (OUTPUT << PB5);
-//
-//   char* buf = new char[256];
-//   Serial.println("input text");
-//      Serial.readBytes(buf, 256 );
-//
-//      Serial.println(buf);
-//   delete[] buf;
-//   return 0;
-//
-//   while (1)
-//   {
-//      _delay_ms(1000);
-//      Serial.println("tick");
-//   }
-//
-//}
+#include "main.h"
+
+int main(void)
+{
+   /* set pin D5 for output internal LED*/
+   DDRB |= (OUTPUT << PB1);
+
+   TCCR1A |= (1 << COM1A0); //toggle on compare match
+   TCCR1B |= (1 << CS12) | (1 << CS10); // prescale by 1024
+   TCNT1 = 0;
+
+   while (1)
+   {
+
+   }
+
+   return 0;
+}
