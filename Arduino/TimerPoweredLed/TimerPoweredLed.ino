@@ -25,14 +25,16 @@ THIS CODE HAS BEEN MODIFIED TO BETTER SUIT MY TEST CASE
 Chris Mc 27/09/17
 */
 
-const int ledPin = 9;      // the pin that the LED is attached to
+const int ledPinA = 6;      // the pin that the LED is attached to
+const int ledPinB = 7;      // max brightness
 
 void setup() {
    // initialize the serial communication:
    Serial.begin(115200);
    // initialize the ledPin as an output:
-   pinMode(ledPin, OUTPUT);
-   analogWrite(ledPin, 255);
+   pinMode(ledPinA, OUTPUT);
+   pinMode(ledPinB, OUTPUT);
+   analogWrite(ledPinB, 255);
 }
 
 void loop() {
@@ -48,6 +50,6 @@ void loop() {
       Serial.println(brightness, DEC);
 
       // set the brightness of the LED:
-      analogWrite(ledPin, brightness);
+      analogWrite(ledPinA, brightness);
    }
 }
