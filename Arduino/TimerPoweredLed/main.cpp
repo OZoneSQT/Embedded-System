@@ -17,8 +17,8 @@ int main(void)
    DDRD |= (255);
    OCR0A = 255;  //initial compare match value
 
-   Serial.println("Launching...");
-   Serial.flush();
+   //Serial.println("Launching...");
+   //Serial.flush();
 
    byte brightness;
 
@@ -30,7 +30,7 @@ int main(void)
       //   Serial.flush();
 
          // read the most recent byte (which will be from 0 to 255):
-         brightness = Serial.read();
+         brightness = Serial.peek();
 
          // print the value
 
