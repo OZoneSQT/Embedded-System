@@ -1,26 +1,45 @@
-byte brightness;
+/*
+Dimmer
+
+Demonstrates sending data from the computer to the Arduino board, in this case
+to control the brightness of an LED. The data is sent in individual bytes,
+each of which ranges from 0 to 255. Arduino reads these bytes and uses them to
+set the brightness of the LED.
+
+The circuit:
+- LED attached from digital pin 9 to ground.
+- Serial connection to Processing, Max/MSP, or another serial application
+
+created 2006
+by David A. Mellis
+modified 30 Aug 2011
+by Tom Igoe and Scott Fitzgerald
+
+This example code is in the public domain.
+
+http://www.arduino.cc/en/Tutorial/Dimmer
+*/
+
+/*
+THIS CODE HAS BEEN MODIFIED TO BETTER SUIT MY TEST CASE
+Chris Mc 27/09/17
+*/
+
+const int ledPin = 9;      // the pin that the LED is attached to
 
 void setup() {
    // initialize the serial communication:
    Serial.begin(115200);
-   int serial_max_write = Serial.availableForWrite();
-
-   /* set pin D5 for output internal LED*/
-   DDRB |= (OUTPUT << PB1);
-
-   TCCR0A |= (1 << COM0A1) | (1 << WGM01) | (1 << WGM00);  //clear on compare match, continue count to OxFF
-   TCCR0B |= (1 << CS02) | (1 << CS00);// prescale counter by 1024
-   TCNT0 = 0;
-   DDRD |= (255);
-   OCR0A = 255;  //initial compare match value
-
-   Serial.println("Launching...");
+   // initialize the ledPin as an output:
+   pinMode(ledPin, OUTPUT);
+   analogWrite(ledPin, 255);
 }
 
-void loop() 
-{
-   if (Serial.available())
-   {
+void loop() {
+   byte brightness;
+
+   // check if data has been sent from the computer:
+   if (Serial.available()) {
       // read the most recent byte (which will be from 0 to 255):
       brightness = Serial.read();
 
@@ -28,6 +47,7 @@ void loop()
       Serial.print("I received: ");
       Serial.println(brightness, DEC);
 
-      OCR0A = brightness;
+      // set the brightness of the LED:
+      analogWrite(ledPin, brightness);
    }
 }
