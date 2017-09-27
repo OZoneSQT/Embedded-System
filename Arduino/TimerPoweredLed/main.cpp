@@ -10,38 +10,33 @@ int main(void)
    Serial.begin(115200);
    int serial_max_write = Serial.availableForWrite();
 
-   DDRB |= (OUTPUT << PB1);
+   TCCR2A |= (1 << COM0A1) | (1 << WGM01) | (1 << WGM00);  //clear on compare match, continue count to OxFF
+   TCCR2B |= (1 << CS02) | (1 << CS00); // prescale counter by 1024
+   DDRB |= (255); // turn all of PB's to output
+   OCR2A = 255;  //initial compare match value - max brightness
 
-   TCCR0A |= (1 << COM0A1) | (1 << WGM01) | (1 << WGM00);  //clear on compare match, continue count to OxFF
-   TCCR0B |= (1 << CS02) | (1 << CS00); // prescale counter by 1024
-   DDRD |= (255);
-   OCR0A = 255;  //initial compare match value
-
-   //Serial.println("Launching...");
-   //Serial.flush();
+   Serial.println("Launching...");
+   Serial.flush();
 
    byte brightness;
 
    while (1)
    {
-      //if (Serial.available() > 0)
-      //{
-      //   Serial.println("now reading next char...");
-      //   Serial.flush();
+      if (Serial.available() > 0)
+      {
+         Serial.println("now reading next char...");
+         Serial.flush();
 
          // read the most recent byte (which will be from 0 to 255):
-         brightness = Serial.peek();
+         brightness = Serial.read();
 
          // print the value
+         Serial.print("I received: ");
+         Serial.println(brightness, DEC);
+         Serial.flush();
 
-         if (brightness == -1)
-         {
-            Serial.print("I received: ");
-            Serial.println(brightness, DEC);
-            Serial.flush();
-            OCR0A = brightness;
-         }
-      //}
+         OCR2A = brightness;
+      }
    }
 
    return 0;
