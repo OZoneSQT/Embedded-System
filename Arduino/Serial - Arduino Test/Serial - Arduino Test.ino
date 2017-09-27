@@ -12,7 +12,7 @@ void setup() {
 
    int serial_max_write = Serial.availableForWrite();
 
-   Serial.println("input a message, ill print the bytes");
+   Serial.println("input a message, i'll echo");
 }
 
 // the loop function runs over and over again until power down or reset
@@ -24,6 +24,7 @@ void loop()
 
       // say what you got:
       Serial.print("I received: ");
-      Serial.println(incomingByte, DEC);
+      Serial.write(incomingByte);
+      Serial.println();
    }
 }
