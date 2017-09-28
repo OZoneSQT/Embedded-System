@@ -1,7 +1,7 @@
 # Lab2 Report
 This lab consisted of three parts, LED brightness controlled by User (throught PWM), Oout putting the values from an IR sensor, and lastly controlling the brightness of the LED using the IR sensor.
 
-> To best view this [document](https://github.com/prince-chrismc/Embedded-System/blob/master/Arduino/TimerPoweredLed/Report.md), use the link provided
+> To best view this [document](https://github.com/prince-chrismc/Embedded-System/blob/master/Arduino/Labs/Lab2/README.md), use the link provided
 
 As of 27/09/2017 at 5:07pm only part 1 is code complete, see [discussion](#Issues-with-Serial) for details.
 
