@@ -15,11 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Serial - Arduino Test.ino" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="__vm\.Serial - Arduino Test.vsarduino.h">
+    <ClInclude Include="__vm\.Counter - Arduino.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Counter - Arduino.ino" />
   </ItemGroup>
 </Project>

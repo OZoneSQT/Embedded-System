@@ -23,14 +23,11 @@
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="__vm\.Lab1.vsarduino.h">
+    <ClInclude Include="__vm\.Blink - Bare Metal.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Lab1.ino" />
-    <None Include="Report.md">
-      <Filter>Resource Files</Filter>
-    </None>
+    <None Include="Blink - Bare Mental.ino" />
   </ItemGroup>
 </Project>
