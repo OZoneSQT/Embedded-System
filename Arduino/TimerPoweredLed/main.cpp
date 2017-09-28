@@ -15,6 +15,12 @@ int main(void)
    DDRB |= (255); // turn all of PB's to output
    OCR2A = 255;  //initial compare match value - max brightness
 
+   //initVariant();
+
+#if defined(USBCON)
+   USBDevice.attach();
+#endif
+
    Serial.println("Launching...");
    Serial.flush();
 
@@ -37,6 +43,8 @@ int main(void)
 
          OCR2A = brightness;
       }
+
+      if (serialEventRun) serialEventRun();
    }
 
    return 0;
