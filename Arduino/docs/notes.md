@@ -7,3 +7,6 @@
  
  ## debugger
  - when vs oncifugation is in debug the debugger is always called, when working in release its not
+ 
+ ## Pinout diagram
+ ![pinout](http://www.pighixxx.com/test/wp-content/uploads/2014/11/nano.png)
