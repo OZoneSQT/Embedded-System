@@ -1,5 +1,5 @@
 # Embedded-System
-This is a Arduino/C/C++ repository using an arduino nano and a begalboard focusing on bare metal coding for my embedded system's class, SOEN 422, at Concordia University during Fall 2017
+This is a Arduino/C/C++ repository using an arduino nano and a begalboard focusing on bare metal coding to contain my work for SOEN 422, embedded systems, at Concordia University during Fall 2017
 
 ## Modules
 - [Lab 1](https://github.com/prince-chrismc/Embedded-System/blob/master/Arduino/Labs/Lab1)
