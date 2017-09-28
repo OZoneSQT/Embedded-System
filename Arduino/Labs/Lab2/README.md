@@ -75,7 +75,7 @@ if (Serial.available() > 0)
 - HardwareSerial.h for serial communitcation
 
 ## Discussion/Conclusion
-- Sadly I wasted too much time on trying to get the `Serial.read()` to work; which never succeed so I did not hav time to complete them before the lab was due. I will submit the complete version tomorrow 28/09/17 most likely
+- To be completed
 
 ### Issues with Serial
 Having first proto-typed the Lab in arduino the transition to bare metal was not clean cut. Previously all my work for bare metal was in in C-code which is how I started this lab. The issue is that the arduino library is *C++* and the `Serial` object produced compilation errors; this actually took an hour of research because the the errors from the avr-gcc compiler are under equiped. The fix was to rename my file from .c to .cpp such that my visual studio extension would use the correct compiler.
