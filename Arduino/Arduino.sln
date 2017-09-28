@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Counter - Arduino", "Tests\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Serial - Arduino", "Tests\Serial - Arduino\Serial - Arduino Test.vcxproj", "{B4889954-5DFB-4DDD-BA86-001CCD2536EC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IR Sensor Output", "Labs\Lab2\IR Sensor Output\IR Sensor Output.vcxproj", "{FA756EE2-B334-447B-AE9B-4A263611036D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -55,6 +57,10 @@ Global
 		{B4889954-5DFB-4DDD-BA86-001CCD2536EC}.Debug|x86.Build.0 = Debug|Win32
 		{B4889954-5DFB-4DDD-BA86-001CCD2536EC}.Release|x86.ActiveCfg = Release|Win32
 		{B4889954-5DFB-4DDD-BA86-001CCD2536EC}.Release|x86.Build.0 = Release|Win32
+		{FA756EE2-B334-447B-AE9B-4A263611036D}.Debug|x86.ActiveCfg = Debug|Win32
+		{FA756EE2-B334-447B-AE9B-4A263611036D}.Debug|x86.Build.0 = Debug|Win32
+		{FA756EE2-B334-447B-AE9B-4A263611036D}.Release|x86.ActiveCfg = Release|Win32
+		{FA756EE2-B334-447B-AE9B-4A263611036D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{C9F6961C-6E8D-4FE8-B7F8-59641C7C3CA3} = {00131B12-0BD8-4708-9AC7-1E547657EA15}
 		{E9150DCE-EF26-4FE5-A9D5-E64DC51403B3} = {00131B12-0BD8-4708-9AC7-1E547657EA15}
 		{B4889954-5DFB-4DDD-BA86-001CCD2536EC} = {00131B12-0BD8-4708-9AC7-1E547657EA15}
+		{FA756EE2-B334-447B-AE9B-4A263611036D} = {66583567-8BF8-4F43-869C-DE5DDB1CE2BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92F21EAD-FF7B-44AF-A04D-3D7C38F04573}
