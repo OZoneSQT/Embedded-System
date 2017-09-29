@@ -1,9 +1,7 @@
 # Lab2 Report
-This lab consisted of three parts, LED brightness controlled by User (throught PWM), Oout putting the values from an IR sensor, and lastly controlling the brightness of the LED using the IR sensor.
+This lab consisted of three parts, LED brightness controlled by User (throught PWM), out putting the values from an IR sensor to a serial monitor, and lastly controlling the brightness of the LED using the IR sensor with at least three levels.
 
 > To best view this [document](https://github.com/prince-chrismc/Embedded-System/blob/master/Arduino/Labs/Lab2/README.md), use the link provided
-
-As of 27/09/2017 at 5:07pm only part 1 is code complete, see [discussion](#Issues-with-Serial) for details.
 
 ### Table of Contents
 1. [Contributors](#Contributors)
@@ -54,7 +52,7 @@ TCCR2B |= (1 << CS02) | (1 << CS00); // prescale counter by 1024
 DDRB |= (255); // turn all of PB's to output
 OCR2A = 255;  //initial compare match value - max brightness
 ```
-- loop
+- serial reading loop (part 1)
 ```c
 if (Serial.available() > 0)
 {
@@ -69,13 +67,25 @@ if (Serial.available() > 0)
    OCR2A = brightness; // set to user input
 }
 ```
+- ADC setup
+```c
+ADMUX |= ADC4D | (1 << REFS0); // Vcc ( 5v) conversion scale
+ADCSRA |= (1 << ADEN) | (1 << ADPS2); // enable with prescalar  at 16 (65kHz conversion clock speed)
+```
+- ADC controll
+```c
+ADCSRA |= (1 << ADSC); // Start Conversion
+while (!(ADCSRA & (1 << ADIF))) {} // wait for ADIF to go to 0, indicating conversion complete.
+ADCSRA |= (1 << ADIF); // Reset ADIF to 1 for the next conversion
+```
 
 ## Reference Code Common
 - the basic Arduino bare metal IO.h for access to pins and registers and basic definitions
 - HardwareSerial.h for serial communitcation
+- The supplied ADC code was extremely useful, I just specialized it to my particular case.
 
 ## Discussion/Conclusion
-- To be completed
+This lab possed more challenges than expected... The largest of which is those with [serial](#Issues-with-Serial). However getting the IR sensor to work also took some time (special thanks to you Mohamed for the removing the resistor tip); I accedentally burnt a nano trying to find why the IR sensor had no output.
 
 ### Issues with Serial
 Having first proto-typed the Lab in arduino the transition to bare metal was not clean cut. Previously all my work for bare metal was in in C-code which is how I started this lab. The issue is that the arduino library is *C++* and the `Serial` object produced compilation errors; this actually took an hour of research because the the errors from the avr-gcc compiler are under equiped. The fix was to rename my file from .c to .cpp such that my visual studio extension would use the correct compiler.
@@ -84,7 +94,7 @@ With everything now compiling, running the code didnt even successfully output a
 
 Now with lovely debug prints fully functional (code no longer hanging), I tried to pass information from the Serial dialogue to the Nano. This doesnt work, my... 
 ```c 
-if(Serial.available() > 0) { /* ... blah blah ... */} 
+if(Serial.available() > 0) { /* ... blah blah ... */ } 
 ```
 ...was never true. Going back and for from arduino to bare metal, I tried testing `Serial.read()` without having printed anything, did have an effect, and a slue of other tweaks and modifications to never obtain a result. I was so faustered at why the arduino was not Rx anything I found this [tutorial](https://blog.manash.me/serial-communication-with-an-arduino-using-c-on-windows-d08710186498) for doing Serial communication from C++ windows to arduino, and use it to manual check what was written. Guess what? It was written successfully. 
 

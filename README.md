@@ -3,7 +3,7 @@ This is a Arduino/C/C++ repository using an arduino nano and a begalboard focusi
 
 ## Modules
 - [Lab 1](https://github.com/prince-chrismc/Embedded-System/blob/master/Arduino/Labs/Lab1)
-- [Lab 2](https://github.com/prince-chrismc/Embedded-System/blob/master/Arduino/Labs/Lab2) - WIP
+- [Lab 2](https://github.com/prince-chrismc/Embedded-System/blob/master/Arduino/Labs/Lab2)
 
 ## System Setup
 1. Visual Studio
