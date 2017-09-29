@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{00131B12-0BD8-4708-9AC7-1E547657EA15}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Serial - Arduino", "Tests\Serial - Arduino\Serial - Arduino Test.vcxproj", "{B4889954-5DFB-4DDD-BA86-001CCD2536EC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IR Sensor Output", "Labs\Lab2\IR Sensor Output\IR Sensor Output.vcxproj", "{FA756EE2-B334-447B-AE9B-4A263611036D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DistanceControlledLed", "Labs\Lab2\DistanceControlledLed\DistanceControlledLed.vcxproj", "{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{FA756EE2-B334-447B-AE9B-4A263611036D}.Debug|x86.Build.0 = Debug|Win32
 		{FA756EE2-B334-447B-AE9B-4A263611036D}.Release|x86.ActiveCfg = Release|Win32
 		{FA756EE2-B334-447B-AE9B-4A263611036D}.Release|x86.Build.0 = Release|Win32
+		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}.Debug|x86.ActiveCfg = Debug|Win32
+		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}.Debug|x86.Build.0 = Debug|Win32
+		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}.Release|x86.ActiveCfg = Release|Win32
+		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{E9150DCE-EF26-4FE5-A9D5-E64DC51403B3} = {00131B12-0BD8-4708-9AC7-1E547657EA15}
 		{B4889954-5DFB-4DDD-BA86-001CCD2536EC} = {00131B12-0BD8-4708-9AC7-1E547657EA15}
 		{FA756EE2-B334-447B-AE9B-4A263611036D} = {66583567-8BF8-4F43-869C-DE5DDB1CE2BF}
+		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB} = {66583567-8BF8-4F43-869C-DE5DDB1CE2BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92F21EAD-FF7B-44AF-A04D-3D7C38F04573}
