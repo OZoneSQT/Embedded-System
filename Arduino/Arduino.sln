@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab3", "Lab3", "{5FC1FE93-6
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Object Detection", "Labs\Lab3\Object Detection\Object Detection.vcxproj", "{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Serial - Bare Metal", "Tests\Serial - Bare Metal\Serial - Bare Metal.vcxproj", "{F25C76BA-B1CA-40D2-8ADC-5C8278EB3DC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -75,6 +77,10 @@ Global
 		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}.Debug|x86.Build.0 = Debug|Win32
 		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}.Release|x86.ActiveCfg = Release|Win32
 		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}.Release|x86.Build.0 = Release|Win32
+		{F25C76BA-B1CA-40D2-8ADC-5C8278EB3DC3}.Debug|x86.ActiveCfg = Debug|Win32
+		{F25C76BA-B1CA-40D2-8ADC-5C8278EB3DC3}.Debug|x86.Build.0 = Debug|Win32
+		{F25C76BA-B1CA-40D2-8ADC-5C8278EB3DC3}.Release|x86.ActiveCfg = Release|Win32
+		{F25C76BA-B1CA-40D2-8ADC-5C8278EB3DC3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB} = {66583567-8BF8-4F43-869C-DE5DDB1CE2BF}
 		{5FC1FE93-687F-4AD5-9BD9-F29900BCC822} = {0E367EC3-5D49-4418-89F1-2F8C83AD8C8C}
 		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F} = {5FC1FE93-687F-4AD5-9BD9-F29900BCC822}
+		{F25C76BA-B1CA-40D2-8ADC-5C8278EB3DC3} = {00131B12-0BD8-4708-9AC7-1E547657EA15}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92F21EAD-FF7B-44AF-A04D-3D7C38F04573}
