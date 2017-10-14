@@ -29,7 +29,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="obj-dtec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
