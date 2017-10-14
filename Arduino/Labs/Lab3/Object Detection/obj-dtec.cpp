@@ -34,13 +34,14 @@ int main(void)
       ADCSRA |= (1 << ADIF);                    // Reset ADIF to 1 for the next conversion
       Serial.println(ADC);                      // Print ADC conversion value
 
-      if (ADC >= 400)                           // above 400
+      if (ADC >= 500)                           // above 500
       {
          DDRB |= (OUTPUT << PB3);               // turn on LED
          OCR2A = 128;                           // set brightness value
 
          DDRB |= (OUTPUT << PB2);               // activate sender
          PORTB |= (HIGH << PB2);                // send signal to rcvr
+         _delay_ms(150);                        // hold singal
       }
       else
       {

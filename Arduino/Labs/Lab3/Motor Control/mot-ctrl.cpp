@@ -13,8 +13,7 @@ ISR(INT0_vect)
       _delay_ms(500);
 
       sei();                                    // Re-enable interrupts
-}
-
+}
 
 int main(void)
 {
