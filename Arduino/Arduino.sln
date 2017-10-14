@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{00131B12-0BD8-4708-9AC7-1E547657EA15}"
 EndProject
@@ -26,6 +26,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IR Sensor Output", "Labs\Lab2\IR Sensor Output\IR Sensor Output.vcxproj", "{FA756EE2-B334-447B-AE9B-4A263611036D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DistanceControlledLed", "Labs\Lab2\DistanceControlledLed\DistanceControlledLed.vcxproj", "{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab3", "Lab3", "{5FC1FE93-687F-4AD5-9BD9-F29900BCC822}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Object Detection", "Labs\Lab3\Object Detection\Object Detection.vcxproj", "{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,10 @@ Global
 		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}.Debug|x86.Build.0 = Debug|Win32
 		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}.Release|x86.ActiveCfg = Release|Win32
 		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB}.Release|x86.Build.0 = Release|Win32
+		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}.Debug|x86.ActiveCfg = Debug|Win32
+		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}.Debug|x86.Build.0 = Debug|Win32
+		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}.Release|x86.ActiveCfg = Release|Win32
+		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,8 @@ Global
 		{B4889954-5DFB-4DDD-BA86-001CCD2536EC} = {00131B12-0BD8-4708-9AC7-1E547657EA15}
 		{FA756EE2-B334-447B-AE9B-4A263611036D} = {66583567-8BF8-4F43-869C-DE5DDB1CE2BF}
 		{9F45D8A6-E3B5-414F-ADE5-FC6B54F5ECDB} = {66583567-8BF8-4F43-869C-DE5DDB1CE2BF}
+		{5FC1FE93-687F-4AD5-9BD9-F29900BCC822} = {0E367EC3-5D49-4418-89F1-2F8C83AD8C8C}
+		{9E1EE2D9-0B37-454F-B348-3B5D0ADFDA4F} = {5FC1FE93-687F-4AD5-9BD9-F29900BCC822}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92F21EAD-FF7B-44AF-A04D-3D7C38F04573}
