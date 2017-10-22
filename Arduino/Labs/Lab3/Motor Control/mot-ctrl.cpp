@@ -74,14 +74,15 @@ ISR(INT0_vect)
 {
       cli();                                    // Disable interrupts in case of another interrupt
 
-      Serial.println("Triggered...");
+      //Serial.println("Triggered...");
       PORTC |= (HIGH << PC3);                   // activate LED
       _delay_ms(150);
+
+      sei();                                    // Re-enable interrupts
 
       char rcv = Serial_read();                 // read instruction
       Serial_write(rcv);                        // echo confirmation
 
-      sei();                                    // Re-enable interrupts
 }
 
 int main(void)

@@ -79,6 +79,9 @@ int main(void)
    Serial_setup();
    //Serial.begin(115200);
 
+   DDRB |= (OUTPUT << PB3);                     // turn on LED
+   DDRB |= (OUTPUT << PB2);                     // activate sender
+
    while (true)
    {
       ADCSRA |= (1 << ADSC);                    // Start Conversion
@@ -88,10 +91,8 @@ int main(void)
 
       if (ADC >= 500)                           // above 500
       {
-         DDRB |= (OUTPUT << PB3);               // turn on LED
          OCR2A = 128;                           // set brightness value
 
-         DDRB |= (OUTPUT << PB2);               // activate sender
          PORTB |= (HIGH << PB2);                // send signal to rcvr
          _delay_ms(150);                        // hold singal
          Serial_print("r");                     // uart send "r"
@@ -100,8 +101,8 @@ int main(void)
       }
       else
       {
-         DDRB &= (INPUT << PB3);                // turn off LED
-         DDRB &= (INPUT << PB2);                // turn off signal
+         OCR2A = 0;                             // turn off LED
+         PORTB &= (LOW << PB2);                 // turn off signal
       }
 
       _delay_ms(50);
