@@ -39,13 +39,15 @@ Christopher McArthur | `40004257`
   - HBridge
   - Mini Car (if aplicable)
 - Hardware Setup
-  - fritzing for each part.
+  - Part 3: ![image](https://user-images.githubusercontent.com/16867443/31867354-fa3f5df8-b75b-11e7-9aff-d27addf83a9b.png)
+  - Part 4: I was unable to find the Hbridge in fritzing.
 
 ## Software Resources
 - Software setup
   - IDE is Visual Studio 2017 Enterprise
   - Compilers are the avr-gcc/avr-g++ for windows
   - Visual studio has an extension called [Visual Micro](http://www.visualmicro.com/) which handles everything from compiling to upload (it just needs to be configured similar to the Arduino IDE)
+  - Fritzing for diagrams
  
 ## Program Snipets
 
@@ -57,4 +59,4 @@ Christopher McArthur | `40004257`
 - The UART example on moodle (I cleaned and refacted it)
 
 ## Discussion/Conclusion
-In the early stages of the Lab (Part 2) the difficulty was figure how best to trigger the interrupts. I had an initial 5v output during the interrupt and tried the various modes but in the end I selected `trigger on rising edge` and fine tuned my signal to 5v out for 150ms and then 0v out; however intermidiately I still had an issue with only 1 interrupt being detected. Getting the UART communication to work took me several hours, namely because i had put my `serial_read()` within interrupts being disabled. There was no major challenge or unexpected behavoir getting UART to work thats to the code provided.
+In the early stages of the Lab (Part 2) the difficulty was figure how best to trigger the interrupts. I had an initial 5v output during the interrupt and tried the various modes but in the end I selected `trigger on rising edge` and fine tuned my signal to 5v out for 150ms and then 0v out; however intermidiately I still had an issue with only 1 interrupt being detected. Getting the UART communication to work took me several hours, namely because i had put my `serial_read()` within interrupts being disabled. There was no major challenge or unexpected behavoir getting UART to work thats to the code provided. The final section for adding the Hbridge and the 'motor' (really just two LEDs) was surprising easy once I figured out which side was which. I did not need to use PWM I just used serial `HIGH` and `LOW` as my signal to the Hbridge. Toggling the outputs changed the direction of the 'motor' (ie. changed which LED was lite).
