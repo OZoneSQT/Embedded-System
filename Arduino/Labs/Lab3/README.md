@@ -51,6 +51,94 @@ Christopher McArthur | `40004257`
  
 ## Program Snipets
 
+### Object Detector Main Loop - Part 2
+```c++
+while (true)
+{
+   ADCSRA |= (1 << ADSC);                    // Start Conversion
+   while (!(ADCSRA & (1 << ADIF))) {}        // wait for ADIF to go to 0, indicating conversion complete.
+   ADCSRA |= (1 << ADIF);                    // Reset ADIF to 1 for the next conversion
+   //Serial.println(ADC);                      // Print ADC conversion value
+
+   if (ADC >= 500)                           // above 500
+   {
+      OCR2A = 128;                           // set brightness value
+
+      PORTB |= (HIGH << PB2);                // send signal to rcvr
+      _delay_ms(150);                        // hold singal
+   }
+   else
+   {
+      OCR2A = 0;                             // turn off LED
+      PORTB &= (LOW << PB2);                 // turn off signal
+   }
+
+   _delay_ms(50);
+}
+```
+
+### Object Detector Main Loop - Part 3
+```c++
+while (true)
+{
+   ADCSRA |= (1 << ADSC);                    // Start Conversion
+   while (!(ADCSRA & (1 << ADIF))) {}        // wait for ADIF to go to 0, indicating conversion complete.
+   ADCSRA |= (1 << ADIF);                    // Reset ADIF to 1 for the next conversion
+   //Serial.println(ADC);                      // Print ADC conversion value
+
+   if (ADC >= 500)                           // above 500
+   {
+      OCR2A = 128;                           // set brightness value
+
+      PORTB |= (HIGH << PB2);                // send signal to rcvr
+      _delay_ms(150);                        // hold singal
+      Serial_print("r");                     // uart send "r"
+      char rcv = Serial_read();              // rcv echo back
+      Serial.println(rcv);
+   }
+   else
+   {
+      OCR2A = 0;                             // turn off LED
+      PORTB &= (LOW << PB2);                 // turn off signal
+   }
+
+   _delay_ms(50);
+}
+```
+
+### Motor Controller Interruprt Function - Part 3
+```c++
+ISR(INT0_vect)
+{
+      cli();                                    // Disable interrupts in case of another interrupt
+
+      PORTC |= (HIGH << PC3);                   // toggle LED
+      _delay_ms(150);
+
+      sei();                                    // Re-enable interrupts
+
+      char rcv = Serial_read();                 // read instruction
+      Serial_write(rcv);                        // echo confirmation
+}
+```
+
+### Motor Controller Interruprt Function - Part 4
+```c++
+ISR(INT0_vect)
+{
+      cli();                                    // Disable interrupts in case of another interrupt
+
+      PORTC ^= (HIGH << PC3);                   // toggle LED
+      PORTC ^= (HIGH << PC$);                   // toggle LED
+      _delay_ms(150);
+
+      sei();                                    // Re-enable interrupts
+
+      char rcv = Serial_read();                 // read instruction
+      Serial_write(rcv);                        // echo confirmation
+}
+```
+
 ## Reference Code Common
 - the basic Arduino bare metal IO.h for access to pins and registers and basic definitions
 - the AVR libraries interrupts.h was a key component

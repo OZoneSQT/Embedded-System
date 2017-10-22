@@ -75,14 +75,13 @@ ISR(INT0_vect)
       cli();                                    // Disable interrupts in case of another interrupt
 
       PORTC ^= (HIGH << PC3);                   // toggle LED (drive)
-      PORTC ^= (LOW << PC4);                    // toggle LED (reverse)
+      PORTC ^= (HIGH << PC4);                   // toggle LED (reverse)
       _delay_ms(150);
 
       sei();                                    // Re-enable interrupts
 
       char rcv = Serial_read();                 // read instruction
       Serial_write(rcv);                        // echo confirmation
-
 }
 
 int main(void)
