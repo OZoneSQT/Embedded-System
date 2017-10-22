@@ -18,7 +18,7 @@ The purpose of this lab was to develop basic skills related to interruprt handli
 Christopher McArthur | `40004257`
 
 ## Introduction
-- Problem Statement: Build a simulated car which reverses on detection of any object infront of it. One Arduino is responsible for the object detection and the second is responsible for motor control. This setup requires for communication between the two.
+- Problem Statement: Build a simulated car which reverses on detection of any object infront of it. One Arduino is responsible for the object detection and the second is responsible for motor control. This setup requires for communication between the two. Motors (LEDs in practice) are wired to an HBridge amplifying the Arduino's 5Vs.
 - Abbreviations and Acronyms
   - LED == Light Emiting Diode
   - DDRx, PBn, etc... Registers names
@@ -27,6 +27,7 @@ Christopher McArthur | `40004257`
   - ADC == analog to digital conversion
   - PWM == pulse with modulation
   - DC == direct current
+  - UART == Universal asynchronous receiver-transmitter+
  
 ## Resources 
 - Hardware Resources
@@ -34,6 +35,7 @@ Christopher McArthur | `40004257`
   - LEDs
   - Jumper Wires
   - IR Sensor
+  - Capacitor
   - HBridge
   - Mini Car (if aplicable)
 - Hardware Setup
@@ -52,6 +54,7 @@ Christopher McArthur | `40004257`
 - the AVR libraries interrupts.h was a key component
 - HardwareSerial.h for serial communitcation for debug prints
 - The supplied ADC code was extremely useful, I just specialized it to my particular case. (recouperated from lab2)
+- The UART example on moodle (I cleaned and refacted it)
 
 ## Discussion/Conclusion
-- In the early stages of the Lab (Part 2) the difficulty was figure how best to trigger the interrupts. I had an initial 5v output during the interrupt and tried the various modes but in the end I selected `trigger on rising edge` and fine tuned my signal to 5v out for 500ms and then 0v out.
+In the early stages of the Lab (Part 2) the difficulty was figure how best to trigger the interrupts. I had an initial 5v output during the interrupt and tried the various modes but in the end I selected `trigger on rising edge` and fine tuned my signal to 5v out for 150ms and then 0v out; however intermidiately I still had an issue with only 1 interrupt being detected. Getting the UART communication to work took me several hours, namely because i had put my `serial_read()` within interrupts being disabled. There was no major challenge or unexpected behavoir getting UART to work thats to the code provided.
