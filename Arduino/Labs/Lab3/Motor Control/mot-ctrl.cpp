@@ -21,7 +21,7 @@ void PWM_setup()
    OCR2A = 0;                                   // initial compare match value - LED off
 }
 
-// Configuring UART Communication in order to send data to the serial monitor
+/// Configuring UART Communication in order to send data to the serial monitor
 void Serial_setup(void)
 {
    UBRR0H = UBRRH_VALUE;
@@ -33,15 +33,15 @@ void Serial_setup(void)
    UCSR0A &= ~(_BV(U2X0));
 #endif
 
-   UCSR0C = _BV(UCSZ01) | _BV(UCSZ00); // 8-bit data
-   UCSR0B = _BV(RXEN0) | _BV(TXEN0);   // Enable RX and TX
+   UCSR0C = _BV(UCSZ01) | _BV(UCSZ00);          // 8-bit data
+   UCSR0B = _BV(RXEN0) | _BV(TXEN0);            // Enable RX and TX
 }
 
 /// Sends 1 byte of data to the serial Monitor
 /// Waits for USART Data Register to be empty by checking if the UDRE flag is set
 void Serial_write(char c)
 {
-   loop_until_bit_is_set(UCSR0A, UDRE0); // Wait until data register empty
+   loop_until_bit_is_set(UCSR0A, UDRE0);        // Wait until data register empty
    UDR0 = c;
 }
 
@@ -49,14 +49,14 @@ void Serial_write(char c)
 /// Waits for UDR0 Data Register to have data that can be read by checking the RXC0 flag
 char Serial_read(void)
 {
-   loop_until_bit_is_set(UCSR0A, RXC0); // Wait until data exists.
+   loop_until_bit_is_set(UCSR0A, RXC0);         // Wait until data exists.
    return UDR0;
 }
 
 /// Prints string
 void Serial_print(const char *s)
 {
-   while (*s) // loop through entire string
+   while (*s)                                   // loop through entire string
    {
       Serial_write(*s);
       s++;
@@ -74,8 +74,8 @@ ISR(INT0_vect)
 {
       cli();                                    // Disable interrupts in case of another interrupt
 
-      //Serial.println("Triggered...");
-      PORTC |= (HIGH << PC3);                   // activate LED
+      PORTC ^= (HIGH << PC3);                   // toggle LED (drive)
+      PORTC ^= (LOW << PC4);                    // toggle LED (reverse)
       _delay_ms(150);
 
       sei();                                    // Re-enable interrupts
@@ -87,19 +87,21 @@ ISR(INT0_vect)
 
 int main(void)
 {
-   sei();                                       // enable interrupts
    Serial_setup();
+
+   sei();                                       // enable interrupts
 
    EICRA |= (1 << ISC01) | (1 << ISC00);        // trigger on rising edge
    EIMSK |= (1 << INT0);                        // active external pin int0
 
-   DDRC |= (OUTPUT << PC3);                     // channel for LED
+   DDRC |= (OUTPUT << PC3);                     // channel for LED (drive)
+   DDRC |= (OUTPUT << PC4);                     // channel for LED (reverse)
 
-   //Serial.begin(115200);
+   PORTC |= (HIGH << PC3);                      // activate LED (drive)
+   PORTC &= (LOW << PC4);                       // turn off LED (reverse)
 
    while (1)
    {
-      PORTC &= (LOW << PC3);                    // turn off LED
       _delay_ms(50);
    }
 
