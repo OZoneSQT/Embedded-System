@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{50778B95-F3F5-47F7-9C78-81D5EF0EE0FC}</ProjectGuid>
+    <ProjectGuid>{6EDB2178-7FC5-4842-99AF-8DBE3D666301}</ProjectGuid>
     <RootNamespace>Lab2</RootNamespace>
     <ProjectName>Phase Correct PWM</ProjectName>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
