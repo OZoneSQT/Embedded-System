@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Blink", "Blink\Blink.vcxproj", "{A0E08CDF-691F-4ADE-AA2C-0D3B718C6199}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Blink", "Labs\Lab5\Blink-CPP\Blink.vcxproj", "{A0E08CDF-691F-4ADE-AA2C-0D3B718C6199}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
