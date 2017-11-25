@@ -39,7 +39,7 @@ Christopher McArthur | `40004257`
 
 ## Discussion/Conclusion
 #### Bash Exploration
-Starting off with the bash section I knew I was going to follow my normal cross-platform development. I plugged the beaglebone into my switch and checked my DHCP server to find its IP address (I later reserved an IP for its MAC and mapped the IP with my DNS server). From my workstation I opened Putty and connected simply with SSH. With access to bash I made myself a user with root priviledges and made a executable file `gpio-test.sh`. I had tried to use echo at first to the built in LED to turn it off then back to heartbeat mode straight form the CLI but I had permission denied issues. The onboard filesystem access is owned by root and even running my commands with `sudo` still gave the same error. Turns out you cant access system resources (like items in the device tree) from user space at all. Solution is halarious to me, I had to run a my shell command as a shell command running from root. See [bash snippets](#Snippets) for the details.
+Starting off with the bash section I knew I was going to follow my normal cross-platform development. I plugged the beaglebone into my switch and checked my DHCP server to find its IP address (I later reserved an IP for its MAC and mapped the IP with my DNS server). From my workstation I opened Putty and connected simply with SSH. With access to bash I made myself a user with root priviledges and made a executable file `gpio-test.sh`. I had tried to use echo at first to the built in LED to turn it off then back to heartbeat mode straight form the CLI but I had permission denied issues. The onboard filesystem access is owned by root and even running my commands with `sudo` still gave the same error. Turns out you cant access system resources (like items in the device tree) from user space at all. Solution is halarious to me, I had to run a my shell command as a shell command running from root. See [bash snippets](#Snippets) for the details. Thankfully when I ran my shell script I didnt have this rediculous problem which thanks to good planning worked on the first try.
 
 ## Snippets
 #### Bash - Internal ON/OFF
@@ -52,6 +52,11 @@ cmcarthur@beaglebone:~$ sudo sh -c "echo heartbeat > /sys/class/leds/beaglebone\
 cmcarthur@beaglebone:~$ sudo sh -c "echo timer > /sys/class/leds/beaglebone\:green\:usr0/trigger"
 cmcarthur@beaglebone:~$ sudo sh -c "echo 100 > /sys/class/leds/beaglebone\:green\:usr0/delay_off"
 cmcarthur@beaglebone:~$ sudo sh -c "echo 100 > /sys/class/leds/beaglebone\:green\:usr0/delay_off"
+```
+#### Bash - GPIO Blink
+```shell
+cmcarthur@beaglebone:~$ sudo ./gpio-blink.sh
+Blinking LED connected to Pin 48 ...
 ```
 
 ## Useful links
