@@ -7,3 +7,9 @@
 ### Bash
 - http://eionix.blogspot.ca/2015/02/gpio-blinking-led-using-bash-script.html
 - https://elinux.org/EBC_Exercise_10_Flashing_an_LED
+
+## Snippet
+```shell
+cmcarthur@beaglebone:~$ sudo sh -c "echo heartbeat > /sys/class/leds/beaglebone\:green\:usr0/trigger"
+cmcarthur@beaglebone:~$ sudo sh -c "echo none > /sys/class/leds/beaglebone\:green\:usr0/trigger"
+```
