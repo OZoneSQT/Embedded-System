@@ -10,6 +10,11 @@
 
 ## Snippet
 ```shell
-cmcarthur@beaglebone:~$ sudo sh -c "echo heartbeat > /sys/class/leds/beaglebone\:green\:usr0/trigger"
 cmcarthur@beaglebone:~$ sudo sh -c "echo none > /sys/class/leds/beaglebone\:green\:usr0/trigger"
+cmcarthur@beaglebone:~$ sudo sh -c "echo heartbeat > /sys/class/leds/beaglebone\:green\:usr0/trigger"
+```
+```shell
+cmcarthur@beaglebone:~$ sudo sh -c "echo timer > /sys/class/leds/beaglebone\:green\:usr0/trigger"
+cmcarthur@beaglebone:~$ sudo sh -c "echo 100 > /sys/class/leds/beaglebone\:green\:usr0/delay_off"
+cmcarthur@beaglebone:~$ sudo sh -c "echo 100 > /sys/class/leds/beaglebone\:green\:usr0/delay_off"
 ```
