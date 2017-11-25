@@ -34,16 +34,16 @@ int main()
 
     std::cout << std::endl << "setting up gpio P9_15!" << std::endl;
 
-    // Activate the GPIO pin controlling the LED
-    std::ofstream gpio_setup("/sys/class/gpio/export");
-    gpio_setup << "48";
-    gpio_setup.close();
+    {
+       // Activate the GPIO pin controlling the LED
+       std::ofstream gpio_setup("/sys/class/gpio/export");
+       gpio_setup << "48";
+       gpio_setup.close();
+    }
 
     // Set GPIO to an output
     std::ofstream gpio48_dir("/sys/class/gpio/gpio48/direction");
-    gpio_setup << "out";
-    gpio_setup.close();
-
+    gpio48_dir << "high";
 
     std::ofstream gpio48_value("/sys/class/gpio/gpio48/value");
     for (/*no init*/;/*no cond*/;/*no incr*/)
@@ -52,6 +52,10 @@ int main()
        std::this_thread::sleep_for(1s);
        gpio48_value << "0"; // turn it off
     }
+    gpio48_value.close();
 
+    // Turn off output for GPIO
+    gpio48_dir << "low";
+    gpio48_dir.close();
     return 0;
 }
