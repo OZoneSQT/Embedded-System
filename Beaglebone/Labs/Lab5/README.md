@@ -1,5 +1,8 @@
 # Lab 5
 
+## Fritzing Diagrams
+![image](https://user-images.githubusercontent.com/16867443/33232803-6f7dbbd0-d1da-11e7-9c22-cdb7eff0613b.png)
+
 ## Useful links
 ### C/CPP
 - http://derekmolloy.ie/beaglebone-controlling-the-on-board-leds-using-c/
