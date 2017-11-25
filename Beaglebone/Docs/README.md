@@ -5,3 +5,7 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
 ### Limitation
 - unable to install g++-7 for std::filesystem
+
+## Pinout
+
+![pinout](http://beagleboard.org/static/images/cape-headers.png)
