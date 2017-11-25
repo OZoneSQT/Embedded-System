@@ -32,7 +32,7 @@ int main()
 {
     std::cout << "Hello World from Blink!" << std::endl;
 
-    std::cout << std::endl << "setting up gpio P9_15!" << std::endl;
+    std::cout << std::endl << "Setting up gpio P9_15!" << std::endl;
 
     {
        // Activate the GPIO pin controlling the LED
@@ -45,6 +45,7 @@ int main()
     std::ofstream gpio48_dir("/sys/class/gpio/gpio48/direction");
     gpio48_dir << "high";
 
+    std::cout << "Now blinking LED..." << std::endl;
     std::ofstream gpio48_value("/sys/class/gpio/gpio48/value");
     for (/*no init*/;/*no cond*/;/*no incr*/)
     {
