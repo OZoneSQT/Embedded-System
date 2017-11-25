@@ -7,8 +7,8 @@ The purpose of this lab is to explore the basic GPIO functionality of the beagle
 1. [Contributors](#Contributors)
 2. [Introduction](#Introduction)
 3. [Resources](#Resources)
-  * [Software Resources](#Software-Resources)
-  * [Hardware Setup](#Hardware Setup)
+    * [Software Resources](#Software-Resources)
+    * [Hardware Setup](#Hardware-Setup)
 4. [Discussion/Conclusion](#Discussion/Conclusion)
 5. [Program Snipets](#Snippets)
 
@@ -60,11 +60,9 @@ Blinking LED connected to Pin 48 ...
 ```
 
 ## Useful links
-### Setup from remote
-- https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-for-linux-development/
-### C/CPP
-- http://derekmolloy.ie/beaglebone-controlling-the-on-board-leds-using-c/
-- http://eionix.blogspot.ca/2015/02/gpio-blink-led-using-c-beagleboneblack.html
-### Bash
-- http://eionix.blogspot.ca/2015/02/gpio-blinking-led-using-bash-script.html
-- https://elinux.org/EBC_Exercise_10_Flashing_an_LED
+#### Setup from remote
+- How to [setup](https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-for-linux-development/)  beaglebone for remote compilation and debug
+#### C/CPP
+- [blink gpio](http://eionix.blogspot.ca/2015/02/gpio-blink-led-using-c-beagleboneblack.html)
+#### Bash
+- [blink internal](https://elinux.org/EBC_Exercise_10_Flashing_an_LED)
